@@ -50,13 +50,13 @@ describe("CityCard component", () => {
   })
 
   it("should call removeCard when delete button is clicked", async () => {
-    const { getByText } = render(
+    const { getByTestId } = render(
       <TestProvideWrapper>
         <CityCard city={MOCK_CITY} />
       </TestProvideWrapper>
     )
 
-    userEvent.click(getByText(/test/i))
+    userEvent.click(getByTestId(/test/i))
     await waitFor(() => {
       expect(mockRemoveCard).toHaveBeenCalledWith(MOCK_CITY.id)
     })

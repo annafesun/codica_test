@@ -34,7 +34,7 @@ const CityCard = ({ city }: { city: Weather }) => {
               <Button sx={{ width: "155px" }} onClick={() => dispatch(updateCityWeather(city.name))} variant="outlined">
                 {city.loading ? <CircularProgress size="25px" /> : "Update info"}
               </Button>
-              <IconButton onClick={() => removeCard(city.id)} aria-label="delete">
+              <IconButton data-testid="test" onClick={() => removeCard(city.id)} aria-label="delete">
                 <HighlightOffRoundedIcon />
               </IconButton>
             </>
