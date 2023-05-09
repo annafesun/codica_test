@@ -1,5 +1,9 @@
 # Codica weather app
 
+### Deployed project
+
+Click here to open project - [https://annafesun.github.io/codica_test](https://annafesun.github.io/codica_test)
+
 ### Requirements
 
 ---
