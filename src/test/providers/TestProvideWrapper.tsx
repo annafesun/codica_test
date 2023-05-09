@@ -4,20 +4,22 @@ import { Provider } from "react-redux"
 import { ThemeProvider } from "@mui/system"
 import { PersistGate } from "redux-persist/integration/react"
 import { theme } from "styles/theme"
-import { createStore, persistor } from "store"
+import { createStore } from "store"
 import { Suspense } from "react"
 import { ALL } from "constants/routes"
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom"
 import { Box, CircularProgress } from "@mui/material"
+import { persistStore } from "redux-persist"
 
 type Props = PropsWithChildren
 
 const testStore = createStore()
+const testPersistor = persistStore(testStore)
 
 const TestProvideWrapper = ({ children }: Props) => {
   return (
     <Provider store={testStore}>
-      <PersistGate persistor={persistor}>
+      <PersistGate persistor={testPersistor}>
         <ThemeProvider theme={theme}>
           <Suspense
             fallback={
